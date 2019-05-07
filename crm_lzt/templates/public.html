@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block con %}
+
+    <h3>公共客户</h3>
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <table class="table table-bordered table-striped">
+                <thead>
+                   <tr>
+                       <th>ID</th>
+                       <th>姓名</th>
+                       <th>手机号</th>
+                       <th>销售顾问</th>
+                       <th>跟进详情</th>
+                       <th>确认跟进</th>
+                   </tr>
+                </thead>
+
+                <tbody>
+                    {% for customer in customer_list %}
+
+                    <tr>
+                        <td>{{ forloop.counter }}</td>
+                        <td>{{ customer.name }}</td>
+                        <td>{{ customer.phone}}</td>
+                        <td>{{ customer.consultant }}</td>
+                        <td><a href="/stark/crm/consultrecord/?customer={{ customer.pk }}">详情记录</a></td>
+                        <td><a href="/stark/crm/customer/follow/{{ customer.pk }}">跟进</a></td>
+                    </tr>
+                    {% endfor %}
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

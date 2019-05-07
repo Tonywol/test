@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block con %}
+
+    <h4>我的客户</h4>
+
+
+    <ul>
+    {% for customer_distribute in customer_distribute_list %}
+    <li>
+       {{ customer_distribute.customer }}---{{ customer_distribute.date }}---{{ customer_distribute.get_status_display }}
+    </li>
+    {% endfor %}
+
+</ul>
+
+
+{% endblock %}
+

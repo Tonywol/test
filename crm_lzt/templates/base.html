@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+    <link rel="stylesheet" href="/static/bootstrap/css/bootstrap.css">
+    <script src="/static/js/jquery-1.12.4.min.js"></script>
+    <link rel="stylesheet" href="/static/css/add.css">
+    <link rel="stylesheet" href="/static/css/show.css">
+
+    <style>
+        .header{
+            height: 60px;
+            width: 100%;
+            background-color: #336699;
+        }
+        .menu{
+            background-color: bisque;
+            top: 60px;
+            left: 0;
+            bottom: 0;
+            width: 200px;
+            position: fixed;
+        }
+        .content{
+            top: 60px;
+            left: 230px;
+            bottom: 0;
+            right: 0;
+            position: fixed;
+            overflow: auto;
+            padding: 30px;
+
+        }
+        .position{
+            width: 100px;
+            height: 30px;
+            right: 0;
+            top: 0;
+            position: fixed;
+        }
+        .menu_btn{
+        font-size: 15px;
+        text-align: center;
+        padding: 30px 0;
+
+
+        }
+
+        .header .title{
+            color: white;
+            font-size: 18px;
+            margin-right: 20px;
+            font-weight: 100;
+        }
+
+
+    </style>
+</head>
+<body>
+
+<div class="header">
+        <p class="position" style="color: black">欢迎：{{ user.name }}</p>
+</div>
+<div class="contain">
+    {% load my_tags %}
+    <div class="menu">
+
+        {% get_menu request %}
+
+    </div>
+    <div class="content">
+        {% block con %}
+
+        {% endblock %}
+    </div>
+</div>
+
+</body>
+</html>
