@@ -21,7 +21,7 @@ from crm import views
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^stark/', site.urls),
-    url(r'^login/', views.login),
+    url(r'^login/$', views.login),
     # 获取滑动验证码的url
-    url(r'^pc-geetest/register', views.get_geetest),
+    url(r'^login/pc_geetest/', views.get_geetest),
 ]
