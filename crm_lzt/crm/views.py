@@ -35,7 +35,7 @@ def login(request):
                 user = user.first()
                 request.session["user_id"] = user.pk
                 initial_session(user, request)
-                return JsonResponse({"code": 0, "msg": "/login"})
+                return JsonResponse({"code": 0, "msg": "/stack/crm/workrecord"})
             else:
                 # 用户名密码错误
                 ret["status"] = 1
